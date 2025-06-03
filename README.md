@@ -12,7 +12,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 * **PHP 8.x:** Linguagem de programação para o servidor.
 * **PostgreSQL:** Sistema de gerenciamento de banco de dados relacional.
 * **PDO:** Extensão PHP para conexão segura com o banco de dados.
-* **XAMPP:** Ambiente de desenvolvimento local (Apache para servidor web, MySQL incluído mas não usado neste projeto, PHP).
+* **XAMPP:** Ambiente de desenvolvimento local (Apache para servidor web, PHP).
 
 **Frontend (Interface Gráfica):**
 * **React.js:** Biblioteca JavaScript para construção da interface do usuário.
@@ -48,13 +48,13 @@ Certifique-se de ter o seguinte software instalado:
     git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
     cd SEU_REPOSITORIO
     ```
-    *(Substitua `SEU_USUARIO` e `SEU_REPOSITORIO` pelos seus dados)*
+    *(Substitua `SEU_USUARIO` e `SEU_REPOSITORIO` pelos seus dados do GitHub)*
 
-2.  **Mova a pasta `backend-produtos` para o `htdocs` do XAMPP:**
-    Copie a pasta `backend-produtos` (que contém `api_produtos.php` e `conexao.php`) para o diretório `htdocs` do seu XAMPP.
+2.  **Mova a pasta `backend` para o `htdocs` do XAMPP:**
+    Copie a pasta `backend` (que contém `api_produtos.php` e `conexao.php`) para o diretório `htdocs` do seu XAMPP.
     * **Windows:** `C:\xampp\htdocs\`
     * **macOS:** `/Applications/XAMPP/htdocs/`
-    * Após mover, a pasta estará acessível via `http://localhost/backend-produtos/`.
+    * Após mover, a API estará acessível via `http://localhost/backend/api_produtos.php`.
 
 3.  **Configure o Banco de Dados PostgreSQL:**
     * Abra o **pgAdmin 4**.
@@ -81,23 +81,27 @@ Certifique-se de ter o seguinte software instalado:
     * **Reinicie o Apache** no Painel de Controle do XAMPP (Stop e depois Start).
 
 5.  **Configure o arquivo de conexão PHP:**
-    * Abra `backend-produtos/conexao.php` no seu editor de código.
+    * Abra `backend/conexao.php` no seu editor de código.
     * Substitua `'SUA_SENHA_DO_POSTGRES'` pela senha real do seu usuário `postgres` do PostgreSQL.
 
-### **Configuração do Frontend (React.js):**
+### **Configuração e Execução do Frontend (React.js):**
 
-1.  **Instale as dependências:**
-    No terminal, navegue até a pasta `frontend-produtos`:
+1.  **Instale as dependências do Node.js:**
+    No terminal, navegue até a pasta `frontend` dentro do seu projeto clonado:
     ```bash
-    cd frontend-produtos
+    cd frontend
     npm install
     ```
+    Este comando irá baixar e instalar todas as dependências do React e outras bibliotecas necessárias.
 
 2.  **Inicie a aplicação React:**
+    No mesmo terminal, com a pasta `frontend` ainda selecionada:
     ```bash
     npm start
     ```
-    Isso abrirá a aplicação no seu navegador em `http://localhost:3000/` (ou outra porta).
+    Isso iniciará o servidor de desenvolvimento do React e abrirá a aplicação no seu navegador em `http://localhost:3000/` (ou outra porta, se a 3000 estiver ocupada).
+
+3. **Copie e Cole os arquivos da pasta frontend para o seu "src"**
 
 ### **Testando a Aplicação:**
 
@@ -106,4 +110,13 @@ Certifique-se de ter o seguinte software instalado:
 3.  Você deverá ver uma mensagem de sucesso na interface, e os dados serão salvos no seu banco de dados PostgreSQL.
 4.  Você pode verificar a inserção no pgAdmin 4, clicando com o botão direito na tabela `produtos` e selecionando "View/Edit Data" > "All Rows".
 
-## 📂 Estrutura do Projeto
+## ➡️ Próximos Passos (Possíveis Melhorias)
+
+* Listar produtos já cadastrados no frontend.
+* Funcionalidades de Edição e Exclusão de produtos (CRUD completo).
+* Melhorar a validação de dados no backend.
+* Adicionar autenticação e autorização à API.
+* Usar bibliotecas de UI no React (ex: Material-UI, Ant Design).
+* Implementar Docker para facilitar o ambiente de desenvolvimento.
+
+---
